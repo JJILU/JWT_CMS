@@ -1,4 +1,3 @@
-alert("connected!!")
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       registerForm.style.color = "green"
       registerForm.innerText =  data.message || "Registration Successfull!"
       setTimeout(() => {
-        window.location.href = "/auth/"
+        window.location.href = "/"
       }, 1000)
      } 
      else
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       registerForm.style.color = "red"
       registerForm.innerText =  data.error || "Registration Failed!!"
       setTimeout(() => {
-        window.location.href = "/auth/register"
+        window.location.href = "/register"
       }, 1000)
      }
      })

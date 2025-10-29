@@ -6,7 +6,7 @@
   <input type="text" placeholder="Enter Teacher School ID" id="teacher_id">
   <input type="password" placeholder="Enter Password" id="password">
   <input type="submit" value="Login">
-  <a href="j"></a>
+  <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
   <p id="loginMsg"></p>
 </form>
 {% endblock content %}
