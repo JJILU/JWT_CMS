@@ -14,9 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
      teacher_id = document.getElementById('teacher_id').value.trim()
      password = document.getElementById('password').value.trim()
+     role = document.getElementById('role').value.trim()
 
 
-     console.log(teacher_id,password)
+     console.log(teacher_id,password,role)
 
 
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const res = await fetch(`/register`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({teacher_id,password})
+      body: JSON.stringify({teacher_id,password,role})
      })
 
 
@@ -60,8 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
      teacher_id = document.getElementById('teacher_id').value.trim()
      password = document.getElementById('password').value.trim()
+     role = document.getElementById('role').value.trim()
 
-     console.log(teacher_id,password)
+
+     console.log(teacher_id,password,role)
+     
 
 
      if (!teacher_id || !password) {
@@ -72,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const res = await fetch(`${API_BASE}`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({teacher_id,password})
+      body: JSON.stringify({teacher_id,password,role})
      })
 
 

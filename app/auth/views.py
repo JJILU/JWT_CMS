@@ -9,6 +9,8 @@ def register():
     if request.method == "GET":
         return render_template('auth/register.html')
     else:
+        data = request.get_json()
+        print("registered: ",data)
         return jsonify({"message":"registered"}),201
         
     
@@ -19,5 +21,9 @@ def login():
     if request.method == "GET":
         return render_template("auth/login.html")
     else: 
+        data = request.get_json()
+        print("logged in: ",data)
+
+        # check if data submitted is valid
         return jsonify({"message":"logged in"}),200
 

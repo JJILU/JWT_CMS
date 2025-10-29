@@ -5,6 +5,11 @@
 <form id="loginForm">
   <input type="text" placeholder="Enter Teacher School ID" id="teacher_id">
   <input type="password" placeholder="Enter Password" id="password">
+  <select id="role">
+    <option value="Teacher">Teacher</option>
+    <option value="Admin">Admin</option>
+    <option value="Student">Student</option>
+  </select>
   <input type="submit" value="Login">
   <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
   <p id="loginMsg"></p>
