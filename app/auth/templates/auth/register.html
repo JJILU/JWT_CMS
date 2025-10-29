@@ -1,0 +1,11 @@
+{% extends 'auth/base.html' %}
+
+{% block content %}
+<h1>Teacher Registration</h1>
+<form id="registrationForm">
+  <input type="text" placeholder="Enter Teacher School ID" id="teacher_id">
+  <inout type="password" placeholder="Enter Password" id="password"></inout>
+  <input type="submit" value="Register">
+</form>
+<p id="registerMsg"></p>
+{% endblock content %}
