@@ -2,7 +2,7 @@ alert("connected!!")
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const API_BASE = '/auth'
+  const API_BASE = '/'
   
   registerForm = document.getElementById('registrationForm')
   loginForm = document.getElementById('loginForm')
@@ -13,8 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
      registerForm.addEventListener("submit", async (e) => {
       e.preventDefault()
 
-     teacher_id = document.getElementById('teacher_id').trim()
-     password = document.getElementById('password').trim()
+     teacher_id = document.getElementById('teacher_id').value.trim()
+     password = document.getElementById('password').value.trim()
+
+
+     console.log(teacher_id,password)
+
 
 
      if (!teacher_id || !password) {
@@ -22,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return
      }
 
-     const res = await fetch(`${API_BASE}/register`, {
+     const res = await fetch(`/register`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({teacher_id,password})
@@ -55,8 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault()
 
-     teacher_id = document.getElementById('teacher_id').trim()
-     password = document.getElementById('password').trim()
+     teacher_id = document.getElementById('teacher_id').value.trim()
+     password = document.getElementById('password').value.trim()
+
+     console.log(teacher_id,password)
 
 
      if (!teacher_id || !password) {
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return
      }
 
-     const res = await fetch(`${API_BASE}/login`, {
+     const res = await fetch(`${API_BASE}`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({teacher_id,password})
@@ -79,14 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
       loginMsg.innerText = data.message || "Login Successfull!"
       setTimeout(() => {
         window.location.href = "/dash/"
-      })
+      },1000)
      }
      else {
       loginMsg.style.color = "red"
       loginMsg.innerText = data.error || "Login Failed!"
       setTimeout(() => {
         window.location.href = "/"
-      })
+      },1000)
      }
      })
 
