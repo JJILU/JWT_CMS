@@ -1,5 +1,8 @@
 from flask import Flask
-from extenstions import db,migrate,jwt
+from extensions import db,migrate,jwt
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def create_app():
